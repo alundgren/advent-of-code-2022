@@ -1,7 +1,7 @@
 mod day1;
 
 fn main() {
-    //day 1
+    //day 1 test
     println!("day1");
     day1::part1_example_input();
     day1::part1_real_input();
