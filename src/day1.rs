@@ -82,5 +82,5 @@ pub fn part2_real_input() {
     let result =
         get_top_three_max_calories_sum("/workspaces/vscode-remote-try-rust/src/day1_input.txt");
     println!("{result}");
-    //assert!(result == 45000, "Expected 45000 but got {}", result);
+    assert!(result == 198041, "Expected 198041 but got {}", result);
 }
