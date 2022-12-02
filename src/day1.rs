@@ -1,15 +1,8 @@
-use std::{
-    fs::File,
-    io::{self, BufRead, BufReader},
-    path::Path,
-};
-
-fn lines_from_file(filename: impl AsRef<Path>) -> io::Result<Vec<String>> {
-    BufReader::new(File::open(filename)?).lines().collect()
-}
+use std::path::Path;
+use utils;
 
 fn iterate_numbers(filename: impl AsRef<Path>, f: &mut dyn FnMut(Option<i64>)) {
-    let lines = lines_from_file(filename).expect("Could not load lines");
+    let lines = utils::lines_from_file(filename).expect("Could not load lines");
     for line in lines {
         if line.is_empty() {
             f(None);
@@ -50,7 +43,7 @@ fn get_top_three_max_calories_sum(filename: impl AsRef<Path>) -> i64 {
 }
 
 pub fn part1_real_input() {
-    let max_calories = get_max_calories("/workspaces/vscode-remote-try-rust/src/day1_input.txt");
+    let max_calories = get_max_calories("/workspaces/advent-of-code-2022/src/day1_input.txt");
     println!("{max_calories}");
     assert!(
         max_calories == 68787,
@@ -61,7 +54,7 @@ pub fn part1_real_input() {
 
 pub fn part1_example_input() {
     let max_calories =
-        get_max_calories("/workspaces/vscode-remote-try-rust/src/day1_example_input.txt");
+        get_max_calories("/workspaces/advent-of-code-2022/src/day1_example_input.txt");
     println!("{max_calories}");
     assert!(
         max_calories == 24000,
@@ -72,7 +65,7 @@ pub fn part1_example_input() {
 
 pub fn part2_example_input() {
     let result = get_top_three_max_calories_sum(
-        "/workspaces/vscode-remote-try-rust/src/day1_example_input.txt",
+        "/workspaces/advent-of-code-2022/src/day1_example_input.txt",
     );
     println!("{result}");
     assert!(result == 45000, "Expected 45000 but got {}", result);
@@ -80,7 +73,7 @@ pub fn part2_example_input() {
 
 pub fn part2_real_input() {
     let result =
-        get_top_three_max_calories_sum("/workspaces/vscode-remote-try-rust/src/day1_input.txt");
+        get_top_three_max_calories_sum("/workspaces/advent-of-code-2022/src/day1_input.txt");
     println!("{result}");
     assert!(result == 198041, "Expected 198041 but got {}", result);
 }
