@@ -5,29 +5,29 @@ const MY_RPS : [char; 3] = ['X', 'Y', 'Z'];
 
 pub fn part1_example_input() {
     let total_points = get_total_points("/workspaces/advent-of-code-2022/src/day2_example_input.txt", false);
-    println!("{}", total_points.to_string());    
+    println!("{:?}", total_points);    
 }
 
 pub fn part1_real_input() {
     let total_points = get_total_points("/workspaces/advent-of-code-2022/src/day2_input.txt", false);
-    println!("{}", total_points.to_string());    
+    println!("{:?}", total_points);    
 }
 
 pub fn part2_example_input() {
     let total_points = get_total_points("/workspaces/advent-of-code-2022/src/day2_example_input.txt", true);
-    println!("{}", total_points.to_string());    
+    println!("{:?}", total_points);    
 }
 
 pub fn part2_real_input() {
     let total_points = get_total_points("/workspaces/advent-of-code-2022/src/day2_input.txt", true);
-    println!("{}", total_points.to_string());    
+    println!("{:?}", total_points);    
 }
 
 fn get_total_points(filename: impl AsRef<Path>, is_part2 : bool) -> u32 {
     let lines = utils::lines_from_file(filename).expect("Could not load lines");
     let mut total_points : u32 = 0;
     for line in lines {
-        let opponent_choice = line.chars().nth(0).unwrap();
+        let opponent_choice = line.chars().next().unwrap();
         let mut my_choice = line.chars().nth(2).unwrap();
         if is_part2 {
             my_choice = get_my_choice(opponent_choice, my_choice);
