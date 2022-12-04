@@ -24,7 +24,7 @@ pub fn part2_real_input() {
 }
 
 fn get_total_points(filename: impl AsRef<Path>, is_part2 : bool) -> u32 {
-    let lines = utils::lines_from_file(filename).expect("Could not load lines");
+    let lines = utils::lines_from_file(filename);
     let mut total_points : u32 = 0;
     for line in lines {
         let opponent_choice = line.chars().next().unwrap();

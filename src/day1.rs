@@ -2,7 +2,7 @@ use std::path::Path;
 use utils;
 
 fn iterate_numbers(filename: impl AsRef<Path>, f: &mut dyn FnMut(Option<i64>)) {
-    let lines = utils::lines_from_file(filename).expect("Could not load lines");
+    let lines = utils::lines_from_file(filename);
     for line in lines {
         if line.is_empty() {
             f(None);
