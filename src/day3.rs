@@ -28,18 +28,15 @@ fn part1(filename: impl AsRef<Path>) -> u32 {
 }
 
 fn part2(filename: impl AsRef<Path>) -> u32 {
-    let lines = utils::lines_from_file(filename);
-    let mut sum = 0;
-    for chunk in lines.chunks(3) {
+    utils::lines_from_file(filename).chunks(3).map(|chunk| {
         let s1 = HashSet::<char>::from_iter(chunk[0].chars());
         let s2 = HashSet::<char>::from_iter(chunk[1].chars());
         let s3 = HashSet::<char>::from_iter(chunk[2].chars());
         let i12: HashSet<char> = s1.intersection(&s2).cloned().collect();
 
-        let item_prio = to_prio(*i12.intersection(&s3).next().unwrap());
-        sum += item_prio;
-    }
-    sum
+        to_prio(*i12.intersection(&s3).next().unwrap())
+    })
+    .sum()
 }
 
 pub fn part1_example_input() {
