@@ -15,3 +15,10 @@ pub fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
 pub fn char_int(c: char, zero_char : char) -> u32 {
     c as u32 - zero_char as u32
 }
+
+pub fn split_to_pair(s: &str, separator: char) -> [String; 2] {
+    let s : Vec::<String> = s.split(separator).map(str::to_string).collect();
+    let s1 = &s[0];
+    let s2 = &s[1];
+    [String::from(s1), String::from(s2)]
+}

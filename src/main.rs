@@ -1,6 +1,7 @@
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 mod utils;
 
 fn main() {
@@ -23,5 +24,12 @@ fn main() {
     day3::part1_real_input();
     day3::part2_example_input();
     day3::part2_real_input();
+
+    println!();
+    println!("day4");
+    day4::part1_example_input();
+    day4::part1_real_input();
+    day4::part2_example_input();
+    day4::part2_real_input();    
 }
 
