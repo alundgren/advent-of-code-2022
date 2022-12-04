@@ -2,7 +2,7 @@ use std::{path::Path};
 
 use utils;
 
-fn part1(filename: impl AsRef<Path>, is_part1: bool) -> u32 {
+fn solve(filename: impl AsRef<Path>, is_part1: bool) -> u32 {
     utils::lines_from_file(filename)
     .iter()
     .map(|line| {
@@ -24,21 +24,21 @@ fn part1(filename: impl AsRef<Path>, is_part1: bool) -> u32 {
 }
 
 pub fn part1_example_input() {
-    let result = part1("/workspaces/advent-of-code-2022/src/day4_example_input.txt", true);
+    let result = solve("/workspaces/advent-of-code-2022/src/day4_example_input.txt", true);
     println!("{:?}", result);
 }
 
 pub fn part1_real_input() {
-    let result = part1("/workspaces/advent-of-code-2022/src/day4_real_input.txt", true);
+    let result = solve("/workspaces/advent-of-code-2022/src/day4_real_input.txt", true);
     println!("{:?}", result);
 }
 
 pub fn part2_example_input() {
-    let result = part1("/workspaces/advent-of-code-2022/src/day4_example_input.txt", false);
+    let result = solve("/workspaces/advent-of-code-2022/src/day4_example_input.txt", false);
     println!("{:?}", result);
 }
 
 pub fn part2_real_input() {
-    let result = part1("/workspaces/advent-of-code-2022/src/day4_real_input.txt", false);
+    let result = solve("/workspaces/advent-of-code-2022/src/day4_real_input.txt", false);
     println!("{:?}", result);
 }
