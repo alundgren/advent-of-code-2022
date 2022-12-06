@@ -39,5 +39,7 @@ fn main() {
     println!("day5");
     day5::part1_example_input();
     day5::part1_real_input();
+    day5::part2_example_input();
+    day5::part2_real_input();
 }
 
