@@ -3,11 +3,13 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 mod utils;
 
 extern crate regex;
 
 fn main() {
+    /*
     println!("day1");
     day1::part1_example_input();
     day1::part1_real_input();
@@ -41,5 +43,11 @@ fn main() {
     day5::part1_real_input();
     day5::part2_example_input();
     day5::part2_real_input();
+    */
+
+    println!();
+    println!("day6");    
+    day6::part1_example();
+    day6::part1_real();
 }
 
