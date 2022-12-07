@@ -49,5 +49,7 @@ fn main() {
     println!("day6");    
     day6::part1_example();
     day6::part1_real();
+    day6::part2_example();
+    day6::part2_real();
 }
 
